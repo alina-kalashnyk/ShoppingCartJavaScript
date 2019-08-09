@@ -22,11 +22,28 @@ class ServiceProducts {
                 var activeText = 'Remove from cart';
             }
 
-            let item  = this.getElement({tagName: 'div', className: 'item'});
-            let name  = this.getElement({tagName: 'div', className: 'name', innerText: this.productsCatalog[i].name});
-            let img   = this.getElement({tagName: 'div', className:'img', backgroundImage: `url(${this.productsCatalog[i].img})`});
-            let price = this.getElement({tagName: 'div', className: 'price', innerText: this.productsCatalog[i].price.toLocaleString()});
-            let btn   = this.getElement({tagName: 'button', className: 'btn'+activeClass, innerText: activeText, id: this.productsCatalog[i].id});
+            let item = serviceCreateElement.getElement({tagName: 'div', className: 'item'});
+            let name = serviceCreateElement.getElement({
+                tagName: 'div',
+                className: 'name',
+                innerText: this.productsCatalog[i].name
+            });
+            let img = serviceCreateElement.getElement({
+                tagName: 'div',
+                className: 'img',
+                backgroundImage: `url(${this.productsCatalog[i].img})`
+            });
+            let price = serviceCreateElement.getElement({
+                tagName: 'div',
+                className: 'price',
+                innerText: this.productsCatalog[i].price.toLocaleString()
+            });
+            let btn = serviceCreateElement.getElement({
+                tagName: 'button',
+                className: 'btn' + activeClass,
+                innerText: activeText,
+                id: this.productsCatalog[i].id
+            });
 
             btn.addEventListener('click', function () {
                 let id = this.getAttribute('data-id');
@@ -50,23 +67,6 @@ class ServiceProducts {
             wrapper.appendChild(item);
         }
         this.container.appendChild(wrapper);
-    }
-
-    getElement(options) {
-        let element = document.createElement(options.tagName);
-        if ('className' in options) {
-            element.setAttribute('class', options.className);
-        }
-        if('innerText' in options) {
-            element.innerText = options.innerText;
-        }
-        if('backgroundImage' in options) {
-            element.style.backgroundImage = options.backgroundImage;
-        }
-        if('id' in options) {
-            element.setAttribute('data-id', options.id );
-        }
-        return element;
     }
 
     actions() {

@@ -72,3 +72,29 @@ body {
     cursor: pointer;
     margin: 20px 20px 0 0;
 }
+
+/*  container-card */
+
+.container-cart {
+    display: none;
+    align-items: flex-start;
+    position: fixed;
+    width: 97%;
+    height: 97vh;
+    background: #fff;
+    box-shadow: 0 16px 24px 5px rgba(33,77,66, .7);
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    margin: auto;
+}
+.cart-close {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    top: 20px;
+    right: 20px;
+    background: url(../img/cancel.svg) no-repeat center center;
+    background-size: contain;
+    cursor: pointer;
+}

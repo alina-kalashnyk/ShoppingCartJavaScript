@@ -25,7 +25,7 @@ class ServiceStore {
         localStorage.setItem('products', JSON.stringify(products));
 
         return {
-            pushProduct : pushProduct,
+            pushProduct: pushProduct,
             products: products
         }
     }
